@@ -1,0 +1,16 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: dataservice
+eureka:
+  client:
+    healthcheck:
+      enabled: true #开启健康检查
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/#指定注册中心的地址
+  instance:
+    prefer-ip-address: true #ip地址优先
+    #设置续约更新时间和到期时间
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10

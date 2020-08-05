@@ -1,0 +1,17 @@
+server:
+  port: 8761 #指定Eureka的端口
+#提供eureka的相关信息
+eureka:
+  instance:
+    #主机名称
+    hostname: localhost
+  server:
+    enable-self-preservation: false #关闭自我保护
+    eviction-interval-timer-in-ms: 4000 #按照指定时间清理无效结点
+  client:
+    #是否注册到服务器
+    register-with-eureka: false
+    #是否获取服务器上的注册信息
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
